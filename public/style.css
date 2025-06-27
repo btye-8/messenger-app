@@ -1,13 +1,13 @@
 body {
   font-family: cursive;
-  padding: 20px;
+  padding: 1px;
   
 }
 input, button {
 
   margin: 5px;
   padding: 10px;
-  background-color: rgb(165, 240, 252);
+ background-color: rgb(178, 235, 244);
   border-radius: 5cqmax;
   font-family: Georgia, 'Times New Roman', Times, serif;
   border: #fff;
@@ -15,11 +15,14 @@ input, button {
 #chatBox {
   font-family:system-ui, -apple-system, Georgia, 'Times New Roman', Times, serif, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   border: 1px solid #ccc;
-  height: 300px;
+  height: 400px;
   overflow-y: scroll;
   padding: 10px;
   margin-bottom: 10px;
-  background: #fff;
-   border-top-right-radius: 10cqmax; 
-  border-bottom-left-radius: 10cqmax;
+ background: #ccefc4;
+   border-top-right-radius: 5cqmax; 
+  border-bottom-left-radius: 5cqmax;
+}
+p{
+font-family: 'Gill Sans', system-ui ;
 }
