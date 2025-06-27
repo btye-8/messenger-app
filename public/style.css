@@ -4,16 +4,22 @@ body {
   
 }
 input, button {
+
   margin: 5px;
   padding: 10px;
+  background-color: rgb(165, 240, 252);
+  border-radius: 5cqmax;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border: #fff;
 }
 #chatBox {
+  font-family:system-ui, -apple-system, Georgia, 'Times New Roman', Times, serif, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   border: 1px solid #ccc;
   height: 300px;
   overflow-y: scroll;
   padding: 10px;
   margin-bottom: 10px;
   background: #fff;
-  border-top-right-radius: 15%;
-  border-bottom-left-radius: 15%;
+   border-top-right-radius: 10cqmax; 
+  border-bottom-left-radius: 10cqmax;
 }
