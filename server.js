@@ -18,8 +18,8 @@ app.use(express.json());
 const PORT = process.env.PORT || 3000;
 
 let users = {
-  gini: "18042007",
-  dev: "18042004"
+  Gini: "18072007",
+  Dev: "18042004"
 };
 
 let messages = [];
