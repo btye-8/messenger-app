@@ -1,6 +1,7 @@
 body {
   font-family: cursive;
   padding: 1px;
+  align-content: center;
   
 }
 input, button {
@@ -16,7 +17,7 @@ input, button {
   font-family:system-ui, -apple-system, Georgia, 'Times New Roman', Times, serif, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   border: 1px solid #ccc;
   height: 400px;
-  overflow-y: scroll;
+  overflow-y: auto , scroll;
   padding: 10px;
   margin-bottom: 10px;
  background: #ccefc4;
