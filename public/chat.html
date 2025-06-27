@@ -46,6 +46,7 @@
       const msg = { user: username, text };
       socket.emit("new-message", msg);
       document.getElementById("message").value = "";
+    }
 
       function clearChat() {
   fetch('/clear', { method: 'POST' })
