@@ -19,7 +19,9 @@ const PORT = process.env.PORT || 3000;
 
 let users = {
   Gini: "18072007",
-  Dev: "18042004"
+  Dev: "18042004",
+  Jai: "13092005",
+  Palak: "12042005"
 };
 
 let messages = [];
