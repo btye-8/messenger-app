@@ -15,13 +15,7 @@
 
   <script src="/socket.io/socket.io.js"></script>
   
-  <script> function clearChat() {
-  fetch('/clear', { method: 'POST' })
-    .then(() => {
-      chatBox.innerHTML = '';
-    });
-}
-  </script>
+
   <script>
     const socket = io();
     const chatBox = document.getElementById("chatBox");
@@ -50,7 +44,14 @@
       const msg = { user: username, text };
       socket.emit("new-message", msg);
       document.getElementById("message").value = "";
-    }
+
+      function clearChat() {
+  fetch('/clear', { method: 'POST' })
+    .then(() => {
+      chatBox.innerHTML = '';
+    };
+}
+
   </script>
 </body>
 </html>
