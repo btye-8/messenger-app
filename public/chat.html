@@ -13,6 +13,7 @@
   <input type="text" id="message" placeholder="Type message...">
   <button onclick="sendMessage()">Send</button>
   <button onclick="clearChat()" id="clearBtn">Clear Chat</button>
+   <button onclick="logout()" id="logoutBtn">Logout</button>
 
 
   <script src="/socket.io/socket.io.js"></script>
@@ -26,7 +27,13 @@
     if (!username) {
       window.location.href = "/";
     }
-
+ if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js')
+    .then(() => console.log('Service Worker Registered'));
+}
+if (Notification.permission !== "granted") {
+  Notification.requestPermission();
+}
     fetch('/messages')
       .then(res => res.json())
       .then(data => {
@@ -39,7 +46,23 @@
       chatBox.appendChild(div);
     }
 
-    socket.on("new-message", addMessage);
+   socket.on("new-message", msg => {
+  addMessage(msg);
+  if (msg.user !== username) {
+    // Trigger notification using service worker
+    navigator.serviceWorker.getRegistration().then(reg => {
+      if (reg) {
+        reg.showNotification("Friend Messenger", {
+          body: "You have a new message",
+          data: { url: "/" }, // login
+          requireInteraction: true,
+          badge: "/v8.png",
+          icon: "/v8.png"
+        });
+      }
+    });
+  }
+});
 
     function sendMessage() {
       const text = document.getElementById("message").value;
@@ -54,8 +77,17 @@
       chatBox.innerHTML = '';
     });
 }
+    function logout() {
+  localStorage.removeItem("username");
+  window.location.href = "/";
+}
+    new Notification("New message from " + msg.user, {
+  body: msg.text,
+  requireInteraction: true
+});
 
 
   </script>
+  <audio id="notifSound" src="./crystal_clear.mp3" preload="auto"></audio>
 </body>
 </html>
