@@ -48,5 +48,10 @@ io.on('connection', socket => {
     io.emit('new-message', msg);
   });
 });
+app.post('/clear', (req, res) => {
+  messages = [];
+  fs.writeFileSync(messageFile, JSON.stringify(messages, null, 2));
+  res.sendStatus(200);
+});
 
 httpServer.listen(PORT, () => console.log(`Server running on port ${PORT}`));
